@@ -59,21 +59,30 @@ python training/train_ppo.py --configs configs/curriculum_stage1.yaml configs/cu
 
 The following figures summarize simulation results and provide insights into the performance of the curriculum RL approach.
 
-### Fig. 1: Multi-domain DRL Slice Placement
-![Multi-domain DRL Slice Placement](figures/fig1.png)
-*Illustration of slice placement across multiple domains, demonstrating vertical and horizontal training strategies.*
+<p align="center">
+  <img src="figures/fig1.png" alt="Multi-domain DRL Slice Placement" width="600"/>
+  <br/>
+  <em><strong>Fig. 1:</strong> Illustration of slice placement across multiple domains, demonstrating vertical and horizontal training strategies.</em>
+</p>
 
-### Fig. 2: Learning Curves of Worker Agent with Curriculum Learning
-![Learning Curves](figures/reward_1.jpg)
-*Comparison of learning curves using PPO and Curriculum PPO. The red lines represent curriculum stage transitions. Curriculum PPO achieves better sample efficiency and final performance.*
+<p align="center">
+  <img src="figures/reward_1.jpg" alt="Learning Curves" width="600"/>
+  <br/>
+  <em><strong>Fig. 2:</strong> Comparison of learning curves using PPO and Curriculum PPO. The red lines indicate stage transitions in curriculum training. Curriculum PPO shows better sample efficiency and final performance.</em>
+</p>
 
-### Fig. 3: Acceptance Ratio Comparison (Master Agent)
-![Acceptance Ratio](figures/env1_AR.jpg)
-*Performance comparison across algorithms (Curriculum PPO, PPO, Greedy) for the acceptance ratio metric.*
+<p align="center">
+  <img src="figures/env1_AR.jpg" alt="Acceptance Ratio Comparison" width="600"/>
+  <br/>
+  <em><strong>Fig. 3:</strong> Comparison of acceptance ratio across algorithms (Curriculum PPO, PPO, Greedy) for the master agent. Curriculum PPO achieves the highest acceptance rate.</em>
+</p>
 
-### Fig. 4: Load Comparison (Master Agent)
-![Load](figures/env1_load.jpg)
-*Performance comparison across algorithms for load utilization, showing Curriculum PPO's efficiency.*
+<p align="center">
+  <img src="figures/env1_load.jpg" alt="Load Comparison" width="600"/>
+  <br/>
+  <em><strong>Fig. 4:</strong> Load comparison across algorithms for the master agent. Curriculum PPO maintains efficient resource utilization.</em>
+</p>
+
 
 
 
