@@ -59,13 +59,17 @@ python training/train_ppo.py --configs configs/curriculum_stage1.yaml configs/cu
 
 The following figures summarize simulation results and provide insights into the performance of the curriculum RL approach.
 
-### **Fig. 2: A comparison of the learning curves using different training methods**
-![Learning Curves](figures/reward_1.eps)
-Shows the learning curves of a worker agent with PPO and Curriculum PPO, demonstrating the improved sample efficiency and final policy performance of curriculum learning.
+### **Fig. 1: Multi-domain DRL Slice placement**
+![Multi-domain DRL Slice placement](figures/fig1.png)
+Shows the multi-domain DRL slice placement with vertical and horizontal training.
 
-### **Fig. 3: Performances over different algorithms for the acceptance ratio and the load**
-![Acceptance Ratio](figures/env_master_AR.eps)
-![Load](figures/env_master_load.eps)
+### **Fig. 3: A comparison of the learning curves using different training methods**
+![Learning Curves](figures/reward_1.png)
+Shows the learning curves of a worker agent with PPO and Curriculum PPO, demonstrating the improved sample efficiency and final policy performance of curriculum learning. The red lines represent the switch from stage one to stage two and stage two to stage three in the curriculum.
+
+### **Fig. 4: Performances over different algorithms for the acceptance ratio and the load**
+![Acceptance Ratio](figures/env_master_AR.png)
+![Load](figures/env_master_load.png)
 Shows the performances over different algorithms (Curriculum PPO, PPO, Greedy) for the acceptance ratio and the load for the master agent, highlighting the superior performance of Curriculum PPO in maximizing acceptance ratio while efficiently utilizing resources.
 
 ## Citation
