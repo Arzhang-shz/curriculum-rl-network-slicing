@@ -96,6 +96,4 @@ If you use this code in your research, please cite the following paper:
 
 This project is licensed under the MIT License. See the `LICENSE` file for details (create a LICENSE file).
 
-## Acknowledgements
 
-This research was supported by [Add any relevant funding sources or acknowledgements here].
