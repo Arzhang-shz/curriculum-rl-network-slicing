@@ -1,0 +1,48 @@
+# ===== Curriculum Stage 1: Simple Requests =====
+# This file defines the environment parameters for the first stage of curriculum learning.
+# In this stage, the agent is trained on simple slice placement requests with fewer VNFs and lower resource demands.
+
+NSPR_numbers: 15          # Number of slice requests per episode. This determines how many slice placement requests the agent will encounter in each training episode.
+
+# VNF chain length range (inclusive). This defines the range for the number of VNFs in each slice request.
+# The number of VNFs in a slice will be randomly chosen from this range.
+vnf_num_range: [2, 4]     
+
+# Per-VNF CPU demand (inclusive range). This defines the range for the CPU resource demand of each VNF.
+# The CPU demand of each VNF will be randomly chosen from this range.
+cpu_demand_range: [1, 2]
+
+# Per-VNF RAM demand (inclusive range). This defines the range for the RAM resource demand of each VNF.
+# The RAM demand of each VNF will be randomly chosen from this range.
+ram_demand_range: [1, 2]
+
+# Per-inter-VNF link bandwidth demand (inclusive range). This defines the range for the bandwidth demand of each link between VNFs.
+# The bandwidth demand of each link will be randomly chosen from this range.
+bw_demand_range: [1, 2]
+
+# Delay is computed as delay_mult × Uniform(delay_range[0], delay_range[1]). This defines how the delay between VNFs is calculated.
+delay_mult: 100
+delay_range: [3, 5]
+
+# Fixed resources per node and per link. These parameters define the capacity of the network infrastructure.
+node_cpu_capacity: 8
+node_ram_capacity: 8
+link_bw_capacity: 15
+
+# Reward shaping. These parameters define the reward structure for the agent.
+reward_per_vnf: 10          # Reward for successfully placing a VNF.
+reward_final_chain: 100       # Reward for successfully placing all VNFs in a slice.
+penalty_rejection: -200       # Penalty for rejecting a slice placement request.
+
+# Delay vector for each of the 43 links (fixed per edge). This defines the delay for each link in the network.
+# Here, every edge has a delay of 50 ms; length = num_edges = 43
+delay_vector: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+               50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+               50, 50, 50]
+
+# Graph dimensions (fixed for this project). These parameters define the size of the network topology.
+num_nodes: 33
+num_edges: 43
+
+# Maximum VNFs in any chain (padding length). This defines the maximum number of VNFs that can be present in a slice.
+max_chain_length: 10

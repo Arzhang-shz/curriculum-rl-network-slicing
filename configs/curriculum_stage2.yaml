@@ -1,0 +1,43 @@
+# ===== Curriculum Stage 2: Medium-Difficulty Requests =====
+# This file defines the environment parameters for the second stage of curriculum learning.
+# In this stage, the agent is trained on medium-difficulty slice placement requests with more VNFs and higher resource demands than stage 1.
+
+NSPR_numbers: 15          # Number of slice requests per episode.
+
+# VNF chain length range (inclusive).
+vnf_num_range: [2, 6]     
+
+# Per-VNF CPU demand (inclusive range).
+cpu_demand_range: [1, 4]
+
+# Per-VNF RAM demand (inclusive range).
+ram_demand_range: [1, 4]
+
+# Per-inter-VNF link bandwidth demand (inclusive range).
+bw_demand_range: [1, 4]
+
+# Delay is computed as delay_mult × Uniform(delay_range[0], delay_range[1]).
+delay_mult: 100
+delay_range: [3, 5]
+
+# Fixed resources per node and per link.
+node_cpu_capacity: 8
+node_ram_capacity: 8
+link_bw_capacity: 15
+
+# Reward shaping.
+reward_per_vnf: 10
+reward_final_chain: 100
+penalty_rejection: -200
+
+# Delay vector for each of the 43 links (fixed per edge).
+delay_vector: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+               50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+               50, 50, 50]
+
+# Graph dimensions (fixed for this project).
+num_nodes: 33
+num_edges: 43
+
+# Maximum VNFs in any chain (padding length).
+max_chain_length: 10
