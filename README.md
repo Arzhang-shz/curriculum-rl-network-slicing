@@ -59,18 +59,23 @@ python training/train_ppo.py --configs configs/curriculum_stage1.yaml configs/cu
 
 The following figures summarize simulation results and provide insights into the performance of the curriculum RL approach.
 
-### **Fig. 1: Multi-domain DRL Slice placement**
-![Multi-domain DRL Slice placement](figures/fig1.png)
-Shows the multi-domain DRL slice placement with vertical and horizontal training.
+### Fig. 1: Multi-domain DRL Slice Placement
+![Multi-domain DRL Slice Placement](figures/fig1.png)
+*Illustration of slice placement across multiple domains, demonstrating vertical and horizontal training strategies.*
 
-### **Fig. 3: A comparison of the learning curves using different training methods**
+### Fig. 2: Learning Curves of Worker Agent with Curriculum Learning
 ![Learning Curves](figures/reward_1.jpg)
-Shows the learning curves of a worker agent with PPO and Curriculum PPO, demonstrating the improved sample efficiency and final policy performance of curriculum learning. The red lines represent the switch from stage one to stage two and stage two to stage three in the curriculum.
+*Comparison of learning curves using PPO and Curriculum PPO. The red lines represent curriculum stage transitions. Curriculum PPO achieves better sample efficiency and final performance.*
 
-### **Fig. 4: Performances over different algorithms for the acceptance ratio and the load**
+### Fig. 3: Acceptance Ratio Comparison (Master Agent)
 ![Acceptance Ratio](figures/env1_AR.jpg)
+*Performance comparison across algorithms (Curriculum PPO, PPO, Greedy) for the acceptance ratio metric.*
+
+### Fig. 4: Load Comparison (Master Agent)
 ![Load](figures/env1_load.jpg)
-Shows the performances over different algorithms (Curriculum PPO, PPO, Greedy) for the acceptance ratio and the load for the master agent, highlighting the superior performance of Curriculum PPO in maximizing acceptance ratio while efficiently utilizing resources.
+*Performance comparison across algorithms for load utilization, showing Curriculum PPO's efficiency.*
+
+
 
 ## Citation
 
